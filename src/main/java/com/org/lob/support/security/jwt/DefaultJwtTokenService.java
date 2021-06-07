@@ -6,8 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import org.springframework.beans.factory.annotation.Value;
-
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
@@ -16,11 +14,13 @@ public class DefaultJwtTokenService implements JwtTokenService {
 	private static final String ROLE_SYSTEM = "SYSTEM";
 	private static final String CLAIM_ROLES = "roles";
 
-	@Value("${app.jwt.secret}")
-	private String jwtSecret;
+	private final String jwtSecret;
+	private final long tokenDurationInMinutes;
 
-	@Value("${app.jwt.token_duration.minutes}")
-	private long tokenDurationInMinutes;
+	public DefaultJwtTokenService(String jwtSecret, long tokenDurationInMinutes) {
+		this.jwtSecret = jwtSecret;
+		this.tokenDurationInMinutes = tokenDurationInMinutes;
+	}
 
 	@Override
 	public JwtToken generateToken(String user) {
