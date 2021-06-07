@@ -1,10 +1,7 @@
-package com.org.lob.support.token;
+package com.org.lob.support.security.jwt;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.org.lob.support.security.jwt.JwtToken;
-import com.org.lob.support.security.jwt.JwtTokenService;
 
 public class DefaultJwtTokenProvider implements JwtTokenProvider {
 

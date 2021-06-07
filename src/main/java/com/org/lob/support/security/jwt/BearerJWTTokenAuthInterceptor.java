@@ -8,8 +8,6 @@ import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
 
-import com.org.lob.support.token.JwtTokenProvider;
-
 public class BearerJWTTokenAuthInterceptor implements ClientHttpRequestInterceptor {
 
 	private JwtTokenProvider jwtTokenProvider;

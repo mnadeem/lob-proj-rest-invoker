@@ -4,10 +4,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.org.lob.support.security.jwt.BearerJWTTokenAuthInterceptor;
+import com.org.lob.support.security.jwt.DefaultJwtTokenProvider;
 import com.org.lob.support.security.jwt.DefaultJwtTokenService;
+import com.org.lob.support.security.jwt.JwtTokenProvider;
 import com.org.lob.support.security.jwt.JwtTokenService;
-import com.org.lob.support.token.DefaultJwtTokenProvider;
-import com.org.lob.support.token.JwtTokenProvider;
 
 @Configuration
 public class JwtConfig {
